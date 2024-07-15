@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Arsenica";
+  src: url("./fonts/arsenica/ArsenicaTrial-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: workSans;
+  src: url("./fonts/workSans/WorkSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* app.css */
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("./fonts/libreBasker/LibreBaskerville-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.libre-baskerville {
+  font-family: "Libre Baskerville", serif;
+}
