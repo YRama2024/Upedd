@@ -38,7 +38,7 @@ const CompanyRegistrationForm = () => {
     }
     try {
       const response = await axios.post(
-        "${BASE_URL}/auth/register/company",
+        `${BASE_URL}/auth/register/company`,
         formData
       );
       

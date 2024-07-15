@@ -32,7 +32,7 @@ const EmployeeRegister = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "${BASE_URL}/auth/register/employee",
+        `${BASE_URL}/auth/register/employee`,
         formData
       );
       const token = response.data.token;
