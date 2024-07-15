@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
+import BASE_URL from "../variables";
 
 const EmployeeRegister = () => {
   const [shouldRedirect, setShouldRedirect] = useState(false);
@@ -31,7 +32,7 @@ const EmployeeRegister = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/auth/register/employee",
+        "${BASE_URL}/auth/register/employee",
         formData
       );
       const token = response.data.token;

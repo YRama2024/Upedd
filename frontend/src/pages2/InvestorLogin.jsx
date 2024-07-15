@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import UpeddLogo from "./../images/UpeddLogo.png";
+import BASE_URL from "../variables";
 
 const InvestorLogin = () => {
   const [username, setUsername] = useState("");
@@ -16,7 +17,7 @@ const InvestorLogin = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3000/startups/list", {
+      const response = await axios.post(`${BASE_URL}/startups/list`, {
         username,
         password,
       });

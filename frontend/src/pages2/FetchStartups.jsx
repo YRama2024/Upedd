@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import upeddLogo from "/home/jack/Pictures/Screenshots/UpeddLogo.png"
+import BASE_URL from '../variables';
 
 const CompanyList = () => {
   const [username, setUsername] = useState('');
@@ -14,7 +15,7 @@ const CompanyList = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/auth/all', {
+      const response = await axios.post(`${BASE_URL}/auth/all`, {
         username,
         password,
       });
@@ -32,7 +33,7 @@ const CompanyList = () => {
 
   const fetchEmployees = async (companyId) => {
     try {
-      const response = await axios.get(`http://localhost:3000/company/${companyId}/employees`);
+      const response = await axios.get(`${BASE_URL}/company/${companyId}/employees`);
       setEmployees(response.data);
       setSelectedCompanyId(companyId);
     } catch (err) {

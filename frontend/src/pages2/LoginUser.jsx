@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import BASE_URL from "../variables";
 
 const LoginUser= () => {
   const [formData, setFormData] = useState({
@@ -20,7 +21,7 @@ const LoginUser= () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/login/employee", formData);
+      const response = await axios.post(`${BASE_URL}/auth/login/employee}`, formData);
       localStorage.setItem("token", response.data.token);
       navigate("/employee/dashboard");
     } catch (err) {

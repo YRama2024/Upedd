@@ -11,6 +11,7 @@ import vc3 from "../images/vc3.jpeg";
 import img1 from "../images/img1.jpeg";
 import img2 from "../images/block5Img2.jpg";
 import TopButton from './TopButton'
+import BASE_URL from "../variables";
 
 function Home() {
   const Navigate = useNavigate();

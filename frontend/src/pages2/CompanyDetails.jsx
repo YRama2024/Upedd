@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import UpeddLogo from './../images/UpeddLogo.png';
+import BASE_URL from '../variables';
 
 const CompanyDetails = () => {
   const { id } = useParams();
@@ -11,7 +12,7 @@ const CompanyDetails = () => {
   useEffect(() => {
     const fetchCompanyDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/company/data/${id}`);
+        const response = await axios.get(`${BASE_URL}/company/data/${id}`);
         setCompany(response.data);
       } catch (err) {
         setError('An error occurred while fetching company details.');

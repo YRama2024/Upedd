@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import BASE_URL from '../variables';
 
 const CompanyEmployees = () => {
   const { id } = useParams();
@@ -10,7 +11,7 @@ const CompanyEmployees = () => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/company/${id}/employees`);
+        const response = await axios.get(`${BASE_URL}/company/${id}/employees`);
         setEmployees(response.data);
       } catch (err) {
         setError('An error occurred while fetching employees. Please try again.');
